@@ -1,30 +1,32 @@
 <app-header></app-header>
 <div class="btns-container">
-  <select
-    name="views"
-    id="views"
-    class="views-select"
-    [(ngModel)]="selectedStyle"
-    (change)="changeView()"
-  >
-    <option>View</option>
-    <option *ngFor="let viewOption of viewOptions" [value]="viewOption">
-      {{ viewOption }}
-    </option>
-  </select>
+  <div>
+    <select
+      name="views"
+      id="views"
+      class="views-select"
+      [(ngModel)]="selectedStyle"
+    >
+      <option>View</option>
+      <option *ngFor="let viewOption of viewOptions" [value]="viewOption">
+        {{ viewOption }}
+      </option>
+    </select>
+    <span class="style">{{ selectedStyle }}</span>
+  </div>
   <a routerLink="/" class="return-group">
     <button class="return">Go Back</button>
   </a>
 </div>
-<div class="data-container" *ngIf="scoreData$; else loading">
-  <table>
+<div class="data-container" *ngIf="scoreData; else loading">
+  <table [ngClass]="selectedStyle">
     <tr>
-      <th>Sample#</th>
-      <th>Score</th>
+      <th><h2>Sample #</h2></th>
+      <th><h2>Score</h2></th>
     </tr>
     <tr
-      *ngFor="let score of scoreData$.calculatedResults; let index = index"
-      [ngClass]="{ evenStyle: 0 === index % 2 }"
+      *ngFor="let score of scoreData.calculatedResults; let index = index"
+      [ngClass]="{ evenStyle: index % 2 === 0 && selectedStyle !== 'Simple' }"
     >
       <td>
         {{ index + 1 }}
@@ -35,8 +37,10 @@
     </tr>
   </table>
   <div class="message-section">
-    <h2 class="message-header">My Message</h2>
-    <p class="message-paragraph">{{ scoreData$.message }}</p>
+    <h2 class="message-header" [ngClass]="selectedStyle">My Message</h2>
+    <p class="message-paragraph">{{ scoreData.message }}</p>
   </div>
 </div>
-<ng-template #loading> Loading score information... </ng-template>
+<ng-template #loading>
+  <div class="loading-text">Loading score information...</div>
+</ng-template>

@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="form-cont">
-  <form f="ngForm" (ngSubmit)="submitForm(f)" class="score-form" novalidate>
+  <form #f="ngForm" (ngSubmit)="submitForm(f)" class="score-form" novalidate>
     <div class="input-group">
       <label for="sampleMaxCount" class="label">Sample Max Count</label>
       <input type="number" class="input" name="sampleMaxCount" ngModel />

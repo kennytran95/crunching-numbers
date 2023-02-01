@@ -11,19 +11,12 @@ import { Observable } from 'rxjs';
 export class SimpleResultComponent {
   constructor(private scoreService: ScoreService) {}
 
-  public scoreData$: any;
+  public scoreData: fullFormData;
+  public selectedStyle: 'Default' | 'Simple' | 'Bordered' = 'Default';
 
-  public selectedStyle: 'default' | 'simple' | 'bordered' = 'default';
-
-  viewOptions = ['default', 'simple', 'bordered'];
-
-  changeView(): void {
-    console.log(this.selectedStyle);
-  }
+  viewOptions = ['Default', 'Simple', 'Bordered'];
 
   ngOnInit() {
-    this.scoreData$ = this.scoreService.getScore();
+    this.scoreData = this.scoreService.getScore();
   }
-
-  public scoreData: fullFormData;
 }

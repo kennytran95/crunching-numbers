@@ -19,8 +19,9 @@
   color: white;
 }
 
-.return-group {
-  /* margin-right: auto; */
+.style {
+  font-style: italic;
+  color: gray;
 }
 
 table {
@@ -28,6 +29,37 @@ table {
   text-align: center;
   table-layout: fixed;
   height: 70vh;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  border-collapse: collapse;
+}
+
+.Default {
+  /* default */
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.Bordered {
+  border: solid 1px black;
+}
+
+.Bordered td {
+  border: solid 1px black;
+}
+
+.Simple th {
+  background-color: black;
+  color: rgb(243, 243, 243);
+  border: solid 3px black;
+}
+
+.Simple td {
+  border: solid 3px black;
+}
+
+th {
+  border-bottom: solid 1px black;
 }
 
 table tr {
@@ -46,9 +78,18 @@ table tr {
 
 .message-header {
   background-color: gray;
+  color: black;
+  border: none;
   padding: 1rem 3rem;
   margin: 1rem;
   border-radius: 3px;
+  width: 25vw;
+  text-align: center;
+}
+
+.message-header.Simple {
+  background-color: black;
+  color: rgb(243, 243, 243);
 }
 
 .message-section {
@@ -56,11 +97,23 @@ table tr {
   flex-direction: column;
   align-items: center;
   width: 25vw;
+  margin: 1rem 0rem;
   /* border: solid 1px green; */
 }
 
 .message-paragraph {
   margin: 0.5rem;
   font-size: 14px;
-  /* border: solid 1px red; */
+  border: solid 1px black;
+  padding: 2rem 1rem;
+}
+
+.loading-text {
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
