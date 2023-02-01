@@ -3,15 +3,21 @@
   <form #f="ngForm" (ngSubmit)="submitForm(f)" class="score-form" novalidate>
     <div class="input-group">
       <label for="sampleMaxCount" class="label">Sample Max Count</label>
-      <input type="number" class="input" name="sampleMaxCount" ngModel />
+      <input
+        type="number"
+        class="input"
+        name="sampleMaxCount"
+        min="0"
+        ngModel
+      />
     </div>
     <div class="input-group">
       <label for="patient" class="label">Patient Score</label>
-      <input type="number" class="input" name="patient" ngModel />
+      <input type="number" class="input" name="patient" min="0" ngModel />
     </div>
     <div class="input-group">
       <label for="doctor" class="label">Doctor Score</label>
-      <input type="number" class="input" name="doctor" ngModel />
+      <input type="number" class="input" name="doctor" min="0" ngModel />
     </div>
     <div class="input-group">
       <label for="message" class="label">Upload Message</label>
@@ -26,8 +32,23 @@
     <div class="submit-cont">
       <button role="button" class="submit-btn">Submit</button>
     </div>
+    <div class="error-cont">
+      <div *ngIf="sampleMaxCountError === true" class="invalid-feedback">
+        Sample Max Count cannot be invalid or negative.
+      </div>
+      <div *ngIf="patientError === true" class="invalid-feedback">
+        Patient Score cannot be invalid or negative.
+      </div>
+      <div *ngIf="doctorError === true" class="invalid-feedback">
+        Doctor Score cannot be invalid or negative.
+      </div>
+      <div *ngIf="fileError === true" class="invalid-feedback">
+        Uploaded File must be a .txt file.
+      </div>
+    </div>
   </form>
 </div>
+
 <!-- <a routerLink="/">
   <button class="return">RETURN</button>
 </a> -->

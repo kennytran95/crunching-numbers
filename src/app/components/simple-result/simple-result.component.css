@@ -79,10 +79,10 @@ table tr {
 .message-header {
   background-color: gray;
   color: black;
-  border: none;
+  border: solid 1px rgb(83, 83, 83);
   padding: 1rem 3rem;
   margin: 1rem;
-  border-radius: 3px;
+  border-radius: 2px;
   width: 25vw;
   text-align: center;
 }

@@ -16,6 +16,12 @@ export class ScoreFormComponent {
 
   public uploadedMessage: string = '';
 
+  //custon error handling
+  public sampleMaxCountError: boolean = false;
+  public patientError: boolean = false;
+  public doctorError: boolean = false;
+  public fileError: boolean = false;
+
   public handleUploadMessage(event: Event): void {
     if (event.target instanceof HTMLInputElement) {
       //needed for type checking element.target.files
@@ -23,6 +29,7 @@ export class ScoreFormComponent {
       if (input.files) {
         //to check for null values
         const fileData: File = input.files[0];
+        if (this.validateFileUpload(fileData)) return;
         const reader: FileReader = new FileReader();
         reader.onload = (): void => {
           const text: string = reader.result as string;
@@ -33,7 +40,23 @@ export class ScoreFormComponent {
     }
   }
 
+  public validateFileUpload(file: File): boolean {
+    if (file.type !== 'text/plain') {
+      this.fileError = true;
+      return true;
+    } else {
+      this.fileError = false;
+      return false;
+    }
+  }
+
   public submitForm(formData: NgForm): void {
+    if (formData.invalid) {
+      //detect error
+      this.validateNumbers(formData);
+      return;
+    }
+    this.validateNumbers(formData);
     this.subscription = this.scoreService
       .postScore(formData.form.value)
       .subscribe((medicalData) => {
@@ -47,7 +70,30 @@ export class ScoreFormComponent {
       });
   }
 
-  ngOnDestroy() {
+  public validateNumbers(formData: NgForm) {
+    if (
+      //custom error-validation b/c Angular has weird validation mechanisms with input type=number
+      formData.form.value.sampleMaxCount < 0 ||
+      isNaN(formData.form.value.sampleMaxCount)
+    ) {
+      this.sampleMaxCountError = true;
+    } else {
+      this.sampleMaxCountError = false;
+    }
+
+    if (formData.form.value.patient < 0 || isNaN(formData.form.value.patient)) {
+      this.patientError = true;
+    } else {
+      this.patientError = false;
+    }
+    if (formData.form.value.doctor < 0 || isNaN(formData.form.value.doctor)) {
+      this.doctorError = true;
+    } else {
+      this.doctorError = false;
+    }
+  }
+
+  public ngOnDestroy() {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
