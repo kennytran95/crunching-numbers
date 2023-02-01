@@ -20,23 +20,21 @@ export class SimpleResultComponent {
   tableSize: number = 10;
   tableSizes: number[] = [5, 10, 15, 20];
 
-  ngOnInit() {
+  public ngOnInit(): void {
     document.body.style.backgroundColor = 'white';
     this.getScoreData();
   }
 
-  getScoreData(): void {
+  public getScoreData(): void {
     this.scoreData = this.scoreService.getScore();
   }
 
-  handlePageChange(event: any) {
+  public handlePageChange(event: any): void {
     this.page = event;
-    // this.getScoreData();
   }
 
-  onTableSizeChange(event: any): void {
+  public handleTableSizeChange(event: any): void {
     this.tableSize = event.target.value;
     this.page = 1;
-    this.getScoreData();
   }
 }

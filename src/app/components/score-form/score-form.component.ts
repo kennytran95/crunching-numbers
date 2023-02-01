@@ -75,7 +75,7 @@ export class ScoreFormComponent {
       });
   }
 
-  public validateNumbers(formData: NgForm) {
+  public validateNumbers(formData: NgForm): void {
     if (
       //custom error-validation b/c Angular has weird validation mechanisms with input type=number
       formData.form.value.sampleMaxCount < 0 ||

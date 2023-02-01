@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'scoreResults',
     component: SimpleResultComponent,
+    loadChildren: () =>
+      import('./components/simple-result/simple-result.module').then(
+        (mod) => mod.SimpleResultModule
+      ),
   },
   {
     path: '**',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { fullFormData } from '../models/fullFormData';
 import { formResultData } from '../models/formResultData';
 
@@ -14,7 +14,7 @@ export class ScoreService {
 
   private scoreData: fullFormData;
 
-  public getScore() {
+  public getScore(): fullFormData {
     return this.scoreData;
   }
 
