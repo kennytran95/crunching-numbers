@@ -18,7 +18,10 @@
     <button class="return">Go Back</button>
   </a>
 </div>
-<div class="data-container" *ngIf="scoreData; else loading">
+<div
+  class="data-container"
+  *ngIf="scoreData$ | async as scoreData; else loading"
+>
   <div>
     <div>
       <label for="tableSize" class="table-label">Results per page</label>
