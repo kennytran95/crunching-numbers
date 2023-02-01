@@ -17,14 +17,7 @@
   padding: 0.4rem;
   text-align: center;
   color: black;
-  /* background-color: rgb(33, 153, 232); */
-  /* color: white; */
 }
-
-/* .views-select:focus {
-  border: rgb(33, 153, 232);
-  outline: none;
-} */
 
 .style {
   font-style: italic;
@@ -42,7 +35,6 @@ table {
 }
 
 .Default {
-  /* default */
   border-top: solid 1px black;
   border-bottom: solid 1px black;
 }
@@ -80,7 +72,6 @@ table tr {
 .data-container {
   display: flex;
   justify-content: space-evenly;
-  /* border: solid 1px blue; */
 }
 
 .message-header {
@@ -105,7 +96,6 @@ table tr {
   align-items: center;
   width: 25vw;
   margin: 1rem 0rem;
-  /* border: solid 1px green; */
 }
 
 .message-paragraph {
@@ -123,12 +113,16 @@ table tr {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.mat-spin {
+  margin: 1rem;
 }
 
 .pagination-section {
   display: flex;
   justify-content: center;
-  /* border: solid 1px pink; */
 }
 
 .table-label {

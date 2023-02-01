@@ -14,7 +14,7 @@
     </select>
     <span class="style">{{ selectedStyle }}</span>
   </div>
-  <a routerLink="/" class="return-group">
+  <a routerLink="/scoreForm" class="return-group">
     <button class="return">Go Back</button>
   </a>
 </div>
@@ -74,5 +74,13 @@
   </div>
 </div>
 <ng-template #loading>
-  <div class="loading-text">Loading score information...</div>
+  <div class="loading-text">
+    <p>Loading score information...</p>
+    <mat-progress-spinner
+      mode="indeterminate"
+      [diameter]="50"
+      [strokeWidth]="5"
+      class="mat-spin"
+    ></mat-progress-spinner>
+  </div>
 </ng-template>

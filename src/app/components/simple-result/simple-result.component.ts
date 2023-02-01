@@ -21,6 +21,7 @@ export class SimpleResultComponent {
   tableSizes: number[] = [5, 10, 15, 20];
 
   ngOnInit() {
+    document.body.style.backgroundColor = 'white';
     this.getScoreData();
   }
 

@@ -12,6 +12,11 @@ import { Subscription } from 'rxjs';
 })
 export class ScoreFormComponent {
   constructor(private scoreService: ScoreService, private router: Router) {}
+
+  ngOnInit() {
+    document.body.style.backgroundColor = 'white';
+  }
+
   private subscription: Subscription;
 
   public uploadedMessage: string = '';

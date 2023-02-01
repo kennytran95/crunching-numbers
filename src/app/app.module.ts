@@ -10,6 +10,8 @@ import { SimpleResultComponent } from './components/simple-result/simple-result.
 import { ScoreService } from './services/score.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ErrorComponent,
     HeaderComponent,
     SimpleResultComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     HttpClientModule,
     NgxPaginationModule,
+    MatProgressSpinnerModule,
   ],
   providers: [ScoreService],
   bootstrap: [AppComponent],
