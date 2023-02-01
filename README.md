@@ -8,6 +8,8 @@
 
 ⏭This is a project created and bootstrapped by [Angular.js](https://angular.io/).
 
+Backend API Repo: https://github.com/kennytran95/CrunchingNumbersAPI
+
 
 ## 👩🏻‍💻Technologies
 
