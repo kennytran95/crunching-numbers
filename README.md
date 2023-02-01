@@ -1,28 +1,22 @@
-# CrunchingNumbers
+# 🔢 Crunching Numbers 🩺👨🏻‍⚕️
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+![CrunchingNumbers](./src/assets/Crunching_Numbers_🩺.png)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+📒Forms, Files & Rendering Results
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+⏭This is a project created and bootstrapped by [Angular.js](https://angular.io/).
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 👩🏻‍💻Technologies
+![Angular](https://img.shields.io/badge/angular-%2320232a.svg?style=for-the-badge&logo=angular&logoColor=%2361DAFB&labelColor=black)
+<br>
+![TypeScript](https://img.shields.io/badge/-Typescript-007acc?style=for-the-badge&labelColor=black&logo=typescript&logoColor=007acc)
+<br>
+![C#](https://img.shields.io/badge/Sharp-2596be.svg?style=for-the-badge&logo=C#&logoColor=white)
+<br>
+![.NET](https://img.shields.io/badge/.NET-%2320232a.svg?style=for-the-badge&logo=.net&logoColor=03adfc)
+<br>
+![MVC](https://img.shields.io/badge/MVC-%23F34F96.svg?style=for-the-badge&logo=MVC&logoColor=white)
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# crunching-numbers
