@@ -5,9 +5,6 @@
 
 📒Forms, Files & Rendering Results
 
-![AddList](https://cdn.discordapp.com/attachments/938570207859970061/1042549156209762448/klist_add_list.gif)
-![EditList](https://cdn.discordapp.com/attachments/938570207859970061/1042549163868565544/klist_edit_list.gif)
-
 
 ⏭This is a project created and bootstrapped by [Angular.js](https://angular.io/).
 
