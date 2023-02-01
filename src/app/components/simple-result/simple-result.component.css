@@ -125,6 +125,10 @@ table tr {
   justify-content: center;
 }
 
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background: aquamarine;
+}
+
 .table-label {
   padding: 0.5rem;
 }
