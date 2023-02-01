@@ -7,17 +7,24 @@
 .btns-container {
   display: flex;
   justify-content: space-between;
+  margin-left: 20px;
 }
 
 .views-select {
-  border: none;
+  border: solid 1px transparent;
   border-radius: 3px;
   margin: 1rem;
   padding: 0.4rem;
   text-align: center;
-  background-color: rgb(96, 96, 255);
-  color: white;
+  color: black;
+  /* background-color: rgb(33, 153, 232); */
+  /* color: white; */
 }
+
+/* .views-select:focus {
+  border: rgb(33, 153, 232);
+  outline: none;
+} */
 
 .style {
   font-style: italic;
@@ -116,4 +123,30 @@ table tr {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.pagination-section {
+  display: flex;
+  justify-content: center;
+  /* border: solid 1px pink; */
+}
+
+.table-label {
+  padding: 0.5rem;
+}
+
+.size-select {
+  border-radius: 3px;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  color: rgb(20, 20, 20);
+}
+
+select:focus {
+  border: solid 1px aquamarine;
+}
+
+option:focus {
+  border: solid 1px aquamarine;
 }

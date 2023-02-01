@@ -13,10 +13,29 @@ export class SimpleResultComponent {
 
   public scoreData: fullFormData;
   public selectedStyle: 'Default' | 'Simple' | 'Bordered' = 'Default';
+  public viewOptions: string[] = ['Default', 'Simple', 'Bordered'];
 
-  viewOptions = ['Default', 'Simple', 'Bordered'];
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 10;
+  tableSizes: number[] = [5, 10, 15, 20];
 
   ngOnInit() {
+    this.getScoreData();
+  }
+
+  getScoreData(): void {
     this.scoreData = this.scoreService.getScore();
+  }
+
+  handlePageChange(event: any) {
+    this.page = event;
+    // this.getScoreData();
+  }
+
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getScoreData();
   }
 }

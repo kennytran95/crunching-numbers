@@ -86,6 +86,7 @@ export class ScoreFormComponent {
     } else {
       this.patientError = false;
     }
+
     if (formData.form.value.doctor < 0 || isNaN(formData.form.value.doctor)) {
       this.doctorError = true;
     } else {
@@ -93,7 +94,7 @@ export class ScoreFormComponent {
     }
   }
 
-  public ngOnDestroy() {
+  public ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

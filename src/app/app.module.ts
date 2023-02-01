@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SimpleResultComponent } from './components/simple-result/simple-result.component';
 import { ScoreService } from './services/score.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,13 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     SimpleResultComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgxPaginationModule,
+  ],
   providers: [ScoreService],
   bootstrap: [AppComponent],
 })

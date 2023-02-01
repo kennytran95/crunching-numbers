@@ -19,23 +19,55 @@
   </a>
 </div>
 <div class="data-container" *ngIf="scoreData; else loading">
-  <table [ngClass]="selectedStyle">
-    <tr>
-      <th><h2>Sample #</h2></th>
-      <th><h2>Score</h2></th>
-    </tr>
-    <tr
-      *ngFor="let score of scoreData.calculatedResults; let index = index"
-      [ngClass]="{ evenStyle: index % 2 === 0 && selectedStyle !== 'Simple' }"
-    >
-      <td>
-        {{ index + 1 }}
-      </td>
-      <td>
-        {{ score }}
-      </td>
-    </tr>
-  </table>
+  <div>
+    <div>
+      <label for="tableSize" class="table-label">Results per page</label>
+      <select
+        (change)="onTableSizeChange($event)"
+        name="tableSize"
+        id="tableSize"
+        class="size-select"
+      >
+        <option *ngFor="let tableSize of tableSizes" class="size-option">
+          {{ tableSize }}
+        </option>
+      </select>
+    </div>
+    <table [ngClass]="selectedStyle">
+      <tr>
+        <th><h2>Sample #</h2></th>
+        <th><h2>Score</h2></th>
+      </tr>
+      <tr
+        *ngFor="
+          let score of scoreData.calculatedResults
+            | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                };
+          let index = index
+        "
+        [ngClass]="{ evenStyle: index % 2 === 0 && selectedStyle !== 'Simple' }"
+      >
+        <td>
+          {{ index + 1 + (tableSize * page - tableSize) }}
+        </td>
+        <td>
+          {{ score }}
+        </td>
+      </tr>
+    </table>
+    <div class="pagination-section">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLavel="Next"
+        (pageChange)="handlePageChange($event)"
+      >
+      </pagination-controls>
+    </div>
+  </div>
   <div class="message-section">
     <h2 class="message-header" [ngClass]="selectedStyle">My Message</h2>
     <p class="message-paragraph">{{ scoreData.message }}</p>
