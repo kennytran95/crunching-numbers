@@ -12,9 +12,9 @@ export class ScoreService {
 
   private base_url: string = 'http://localhost:5236';
 
-  private scoreData: fullFormData;
+  private scoreData: Observable<fullFormData>;
 
-  public getScore(): fullFormData {
+  public getScore(): Observable<fullFormData> {
     return this.scoreData;
   }
 
@@ -23,6 +23,6 @@ export class ScoreService {
   }
 
   public setScoreData(result: fullFormData): void {
-    this.scoreData = result;
+    this.scoreData = of(result);
   }
 }
