@@ -1,6 +1,6 @@
 # 🔢 Crunching Numbers 🩺👨🏻‍⚕️
 
-![CrunchingNumbers](./src/assets/Crunching_Numbers_🩺.png)
+![CrunchingNumbers](./src/assets/Crunching_Numbers.png)
 
 
 📒Forms, Files & Rendering Results
