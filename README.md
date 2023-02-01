@@ -10,9 +10,10 @@
 
 
 ## 👩🏻‍💻Technologies
-![Angular](https://img.shields.io/badge/angular-%2320232a.svg?style=for-the-badge&logo=angular&logoColor=%2361DAFB&labelColor=black)
-<br>
+
 ![TypeScript](https://img.shields.io/badge/-Typescript-007acc?style=for-the-badge&labelColor=black&logo=typescript&logoColor=007acc)
+<br>
+![Angular](https://img.shields.io/badge/angular-%2320232a.svg?style=for-the-badge&logo=angular&logoColor=%2361DAFB&labelColor=black)
 <br>
 ![C#](https://img.shields.io/badge/Sharp-2596be.svg?style=for-the-badge&logo=C#&logoColor=white)
 <br>
