@@ -5,6 +5,8 @@
 
 📒Forms, Files & Rendering Results
 
+![CrunchingNumbersDemo](./src/assets/NumberCruncher.gif)
+
 
 ⏭This is a project created and bootstrapped by [Angular.js](https://angular.io/).
 
