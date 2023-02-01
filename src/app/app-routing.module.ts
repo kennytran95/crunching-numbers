@@ -1,10 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from './components/error/error.component';
+import { ScoreFormComponent } from './components/score-form/score-form.component';
+import { SimpleResultComponent } from './components/simple-result/simple-result.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: ScoreFormComponent,
+  },
+  {
+    path: 'scoreResults',
+    component: SimpleResultComponent,
+  },
+  {
+    path: '**',
+    component: ErrorComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="btns-container">
+  <select
+    name="views"
+    id="views"
+    class="views-select"
+    [(ngModel)]="selectedStyle"
+    (change)="changeView()"
+  >
+    <option>View</option>
+    <option *ngFor="let viewOption of viewOptions" [value]="viewOption">
+      {{ viewOption }}
+    </option>
+  </select>
+  <a routerLink="/" class="return-group">
+    <button class="return">Go Back</button>
+  </a>
+</div>
+<div class="data-container" *ngIf="scoreData$; else loading">
+  <table>
+    <tr>
+      <th>Sample#</th>
+      <th>Score</th>
+    </tr>
+    <tr
+      *ngFor="let score of scoreData$.calculatedResults; let index = index"
+      [ngClass]="{ evenStyle: 0 === index % 2 }"
+    >
+      <td>
+        {{ index + 1 }}
+      </td>
+      <td>
+        {{ score }}
+      </td>
+    </tr>
+  </table>
+  <div class="message-section">
+    <h2 class="message-header">My Message</h2>
+    <p class="message-paragraph">{{ scoreData$.message }}</p>
+  </div>
+</div>
+<ng-template #loading> Loading score information... </ng-template>

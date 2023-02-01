@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="form-cont">
+  <form #f="ngForm" (ngSubmit)="submitForm(f)" class="score-form" novalidate>
+    <div class="input-group">
+      <label for="sampleMaxCount" class="label">Sample Max Count</label>
+      <input type="number" class="input" name="sampleMaxCount" ngModel />
+    </div>
+    <div class="input-group">
+      <label for="patient" class="label">Patient Score</label>
+      <input type="number" class="input" name="patient" ngModel />
+    </div>
+    <div class="input-group">
+      <label for="doctor" class="label">Doctor Score</label>
+      <input type="number" class="input" name="doctor" ngModel />
+    </div>
+    <div class="input-group">
+      <label for="message" class="label">Upload Message</label>
+      <input
+        type="file"
+        class="input"
+        name="message"
+        ngModel
+        (change)="handleUploadMessage($event)"
+      />
+    </div>
+    <div class="submit-cont">
+      <button role="button" class="submit-btn">Submit</button>
+    </div>
+  </form>
+</div>
+<!-- <a routerLink="/">
+  <button class="return">RETURN</button>
+</a> -->
